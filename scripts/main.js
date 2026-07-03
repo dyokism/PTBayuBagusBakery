@@ -414,6 +414,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggleBtn = document.getElementById('menu-toggle-btn');
   const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
   const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+  const logoLink = document.getElementById('logo-link');
+  const mobileBtnCta = document.querySelector('.mobile-btn-cta');
   
   const catalogGrid = document.getElementById('catalog-grid');
   const catalogSearch = document.getElementById('catalog-search');
@@ -458,7 +460,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const lblGaram = document.getElementById('lbl-garam');
   const lblGaramAkg = document.getElementById('lbl-garam-akg');
 
-  /* State boundary checks prevent layout reflows on high-frequency scroll ticks */
   let isHeaderScrolled = false;
   window.addEventListener('scroll', () => {
     const shouldScroll = window.scrollY > 50;
@@ -477,24 +478,33 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggleBtn.setAttribute('aria-expanded', !isExpanded);
     menuToggleBtn.classList.toggle('active');
     mobileNavDrawer.classList.toggle('active');
+    siteHeader.classList.toggle('mobile-menu-active');
     
-    /* Scroll lock handles viewport positioning constraints when nav drawer is active */
     if (!isExpanded) {
-      document.body.style.overflow = 'hidden';
+      document.documentElement.classList.add('mobile-menu-open');
     } else {
-      document.body.style.overflow = '';
+      document.documentElement.classList.remove('mobile-menu-open');
     }
   };
 
   menuToggleBtn.addEventListener('click', toggleMobileMenu);
   
-  mobileNavItems.forEach(item => {
-    item.addEventListener('click', () => {
-      menuToggleBtn.setAttribute('aria-expanded', 'false');
-      menuToggleBtn.classList.remove('active');
-      mobileNavDrawer.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+  const closeMobileMenu = () => {
+    menuToggleBtn.setAttribute('aria-expanded', 'false');
+    menuToggleBtn.classList.remove('active');
+    mobileNavDrawer.classList.remove('active');
+    siteHeader.classList.remove('mobile-menu-active');
+    document.documentElement.classList.remove('mobile-menu-open');
+  };
+
+  mobileNavItems.forEach(item => item.addEventListener('click', closeMobileMenu));
+  if (logoLink) logoLink.addEventListener('click', closeMobileMenu);
+  if (mobileBtnCta) mobileBtnCta.addEventListener('click', closeMobileMenu);
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992 && mobileNavDrawer.classList.contains('active')) {
+      closeMobileMenu();
+    }
   });
 
   window.addEventListener('keydown', (e) => {
@@ -615,7 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCatalog();
   });
 
-  /* Retains pointer to focused element to restore page focus flow when modal closes (WCAG SC 2.4.3) */
+  // WCAG 2.4.3 focus restoration.
   let lastActiveElement = null;
 
   const openNutritionModal = (product) => {
@@ -645,7 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lblKarbohidrat.textContent = `${nut.karbohidrat_total_gr} g`;
     lblKarbohidratAkg.textContent = `${nut.karbohidrat_total_akg_persen}%`;
 
-    /* Servings data format differs; fiber is omitted from the table dynamically when missing */
+    // Fiber is omitted from nutrition table when null.
     if (nut.serat_pangan_gr !== null) {
       rowSeratPangan.style.display = 'flex';
       lblSeratPangan.textContent = `${nut.serat_pangan_gr} g`;
@@ -691,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
     products.forEach(p => {
       const option = document.createElement('option');
       option.value = p.id;
-      option.textContent = `${p.name} - Rp ${p.price.toLocaleString('id-ID')}/pcs`;
+      option.textContent = `${p.name} (Rp ${p.price.toLocaleString('id-ID')})`;
       calcProductSelect.appendChild(option);
     });
   };
@@ -714,8 +724,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const prodId = calcProductSelect.value;
     const qty = parseInt(calcQtyInput.value, 10);
     
-    if (isNaN(qty) || qty < 1) {
-      alert("Masukkan jumlah produk yang valid!");
+    if (isNaN(qty) || qty < 10) {
+      alert("Minimal pemesanan grosir untuk tiap item adalah 10 pcs!");
       return;
     }
 
@@ -733,7 +743,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     renderCart();
+    showToast(`Berhasil menambahkan ${qty} pcs ${product.name}`);
   });
+
+  const showToast = (message) => {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    
+    const toast = document.createElement('div');
+    toast.className = 'toast-message';
+    toast.innerHTML = `
+      <span><span class="toast-success-icon">✓</span> ${message}</span>
+    `;
+    
+    container.appendChild(toast);
+    
+    setTimeout(() => toast.classList.add('show'), 50);
+    
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 3000);
+  };
 
   const renderCart = () => {
     cartBody.innerHTML = '';
@@ -811,8 +842,21 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     if (cart.length === 0) {
-      alert("Silakan tambahkan minimal 1 produk ke dalam kalkulator sebelum mengirim penawaran!");
-      return;
+      // Auto-add selected item if user bypasses "Tambah Item" button.
+      const prodId = calcProductSelect.value;
+      const qty = parseInt(calcQtyInput.value, 10);
+      
+      if (prodId && !isNaN(qty) && qty >= 10) {
+        const product = products.find(p => p.id === prodId);
+        if (product) {
+          cart.push({ productId: prodId, qty: qty });
+          renderCart();
+          showToast(`Otomatis menambahkan ${qty} pcs ${product.name}`);
+        }
+      } else {
+        alert("Silakan pilih produk dan jumlah (minimal 10 pcs) sebelum mengirim penawaran!");
+        return;
+      }
     }
 
     const name = document.getElementById('form-name').value;
