@@ -8,7 +8,6 @@ Landing page resmi PT Bayu Bagus Bakery. Berisi fitur katalog roti interaktif, k
 ├── assets/         # Aset gambar & logo (format WebP)
 ├── scripts/        # Skrip logika interaktif (main.js)
 ├── styles/         # Lembar gaya CSS (base.css & components.css)
-├── AGENTS.md       # Dokumentasi konteks AI agent
 ├── README.md       # Dokumentasi utama proyek
 └── index.html      # Struktur utama halaman web
 ```
