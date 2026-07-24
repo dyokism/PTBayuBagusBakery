@@ -1,23 +1,24 @@
 # PT Bayu Bagus Bakery
 
-Repositori ini berisi kode sumber dan dokumentasi perubahan landing page [PT Bayu Bagus Bakery](https://bayubagus.vercel.app). Halaman ini dirancang menggunakan HTML, CSS, dan JS vanilla yang dioptimalkan untuk aksesibilitas, performa, dan responsivitas.
+Landing page resmi PT Bayu Bagus Bakery. Berisi fitur katalog roti interaktif, kalkulator estimasi order grosir, serta informasi nilai gizi standar BPOM RI yang dibangun menggunakan HTML5, CSS vanilla, dan JavaScript teroptimasi.
 
 ## Struktur Direktori
 
 ```text
-├── assets/         # Aset media (gambar dan logo format WebP)
-├── scripts/        # Skrip JS interaktif
-├── styles/         # Lembar gaya CSS
-├── README.md       # Dokumentasi proyek (file ini)
-└── index.html      # Struktur utama halaman
+├── assets/         # Aset gambar & logo (format WebP)
+├── scripts/        # Skrip logika interaktif (main.js)
+├── styles/         # Lembar gaya CSS (base.css & components.css)
+├── AGENTS.md       # Dokumentasi konteks AI agent
+├── README.md       # Dokumentasi utama proyek
+└── index.html      # Struktur utama halaman web
 ```
 
 ## Cara Menjalankan Lokal
 
-Jalankan server HTTP lokal menggunakan Python pada direktori proyek:
+Jalankan server HTTP lokal menggunakan Python:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8080
 ```
 
-Setelah berjalan, akses situs melalui tautan: http://localhost:8000
+Akses situs melalui browser: [http://localhost:8080](http://localhost:8080)

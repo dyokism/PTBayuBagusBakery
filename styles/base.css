@@ -1,6 +1,6 @@
 :root {
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', -apple-system, system-ui, sans-serif;
+  --font-body: 'Sora', -apple-system, system-ui, sans-serif;
 
   --color-bg: #FDFBF7;
   --color-bg-secondary: #F5EFEB;
@@ -12,8 +12,8 @@
   --color-white: #FFFFFF;
   --header-height: 72px;
   
-  --color-shadow: rgba(47, 31, 23, 0.08);
-  --color-shadow-hover: rgba(47, 31, 23, 0.15);
+  --color-shadow: rgba(47, 31, 23, 0.06);
+  --color-shadow-hover: rgba(47, 31, 23, 0.12);
   --color-primary-rgb: 181, 76, 48;
   
   --radius-sm: 8px;
@@ -23,22 +23,42 @@
   --border-thin: 1px solid var(--color-border);
   --border-thick: 2px solid var(--color-text);
   
-  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 
   --scrollbar-gutter: stable both-edges;
 
   /* WCAG 1.4.4 zoom-safe fluid typography. */
-  --font-size-body: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
-  --font-size-h1: clamp(2.2rem, 1.8rem + 2vw, 3.8rem);
-  --font-size-h2: clamp(1.6rem, 1.4rem + 1vw, 2.4rem);
-  --font-size-h3: clamp(1.2rem, 1.1rem + 0.5vw, 1.6rem);
+  --font-size-body: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  --font-size-h1: clamp(2.2rem, 1.8rem + 2.5vw, 3.6rem);
+  --font-size-h2: clamp(1.6rem, 1.4rem + 1.2vw, 2.4rem);
+  --font-size-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.5rem);
 }
 
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* WCAG 2.4.1 Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  z-index: 10000;
+  transition: top 0.2s ease-in-out;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.skip-link:focus-visible {
+  top: 16px;
 }
 
 html {
@@ -228,7 +248,7 @@ img {
   box-shadow: 0 4px 20px rgba(47, 31, 23, 0.04);
 }
 
-/* Solid header overlay configuration when mobile menu is active */
+/* Disable backdrop-blur on active drawer to prevent GPU layering bugs on iOS Safari. */
 .site-header.mobile-menu-active {
   background-color: var(--color-bg);
   backdrop-filter: none;
