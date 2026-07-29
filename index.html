@@ -8,8 +8,8 @@
   <meta name="description" content="Kemitraan roti grosir B2B terpercaya di Nganjuk, Jawa Timur. Memproduksi roti burger, mooncake, roti sisir, dan roti tawar premium dengan sertifikasi Halal &amp; BPOM.">
 
   <link rel="canonical" href="https://bayubagusbakery.com/">
-  
-  <!-- Open Graph / Social Media Meta Tags -->
+  <link rel="preload" as="image" href="assets/hero_bakery_showcase.webp" type="image/webp" fetchpriority="high">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PT Bayu Bagus Bakery">
   <meta property="og:title" content="PT Bayu Bagus Bakery - Produsen Roti &amp; Kue Grosir Premium Jawa Timur">
@@ -19,7 +19,6 @@
   <meta property="twitter:title" content="PT Bayu Bagus Bakery - Produsen Roti &amp; Kue Grosir Premium">
   <meta property="twitter:description" content="Kemitraan roti grosir B2B terpercaya di Nganjuk, Jawa Timur.">
 
-  <!-- JSON-LD Structured Data for LocalBusiness / Bakery -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -57,15 +56,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/header.css">
+  <link rel="stylesheet" href="/src/styles/hero.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
 </head>
 <body>
   <a href="#hero" class="skip-link">Skip to main content</a>
 
   <header class="site-header" id="site-header">
     <div class="container header-container">
-      <a href="#" class="logo-link" id="logo-link">
+      <a href="#" class="logo-link">
         <img src="assets/logo.webp" alt="Logo PT Bayu Bagus Bakery" class="logo-img" width="59" height="44">
         <div class="logo-text">
           <span class="logo-title">Bayu Bagus</span>
@@ -81,7 +82,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="https://wa.me/6281234714911" target="_blank" rel="noopener noreferrer" class="btn-primary btn-header" id="header-cta">
+        <a href="https://wa.me/6281234714911" target="_blank" rel="noopener noreferrer" class="btn-primary btn-header">
           Hubungi B2B
         </a>
         <button class="mobile-menu-toggle" id="menu-toggle-btn" aria-label="Buka Menu Navigasi" aria-expanded="false">
@@ -105,7 +106,7 @@
 
   <main>
     <section class="hero-section" id="hero">
-      <div class="container hero-container">
+      <div class="container">
         <div class="hero-grid">
           <div class="hero-text-content">
             <h1 class="hero-title">Roti Lezat, Pasokan Stabil &amp; <span class="highlight-text">Higienis Setiap Hari</span></h1>
@@ -119,35 +120,6 @@
           <div class="hero-visual-content">
             <div class="hero-single-showcase">
               <img src="assets/hero_bakery_showcase.webp" alt="Roti Lezat Bayu Bagus Showcase" class="hero-showcase-img" width="480" height="520" loading="eager" fetchpriority="high">
-              <div class="collage-bg-blur"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="trust-strip-section" id="trust-strip">
-      <div class="container">
-        <div class="trust-strip-grid">
-          <div class="trust-strip-item">
-            <span class="trust-badge-tag">HALAL</span>
-            <div class="trust-badge-text">
-              <h4>Resmi Kemenag RI</h4>
-              <p>100% Bahan Baku Halal Thoyyib</p>
-            </div>
-          </div>
-          <div class="trust-strip-item">
-            <span class="trust-badge-tag">BPOM</span>
-            <div class="trust-badge-text">
-              <h4>Terdaftar &amp; Higienis</h4>
-              <p>Standar Keamanan Pangan Resmi</p>
-            </div>
-          </div>
-          <div class="trust-strip-item">
-            <span class="trust-badge-tag">FRESH</span>
-            <div class="trust-badge-text">
-              <h4>Dipanggang Setiap Pagi</h4>
-              <p>Kapasitas Ribuan Pcs / Hari</p>
             </div>
           </div>
         </div>
@@ -158,20 +130,20 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-box">
-            <h2 class="stat-number" id="stat-maps">4.7★</h2>
+            <h2 class="stat-number">4.7★</h2>
             <p class="stat-label">Google Maps Rating</p>
           </div>
           <div class="stat-box">
-            <h2 class="stat-number" id="stat-reviews">119+</h2>
+            <h2 class="stat-number">119+</h2>
             <p class="stat-label">Ulasan Kepuasan Mitra</p>
           </div>
           <div class="stat-box">
-            <h2 class="stat-number" id="stat-capacity">Ribuan</h2>
+            <h2 class="stat-number">Ribuan</h2>
             <p class="stat-label">Kapasitas Produksi Harian</p>
           </div>
           <div class="stat-box">
-            <h2 class="stat-number" id="stat-regions">Jatim</h2>
-            <p class="stat-label">Cakupan Distribusi Logistik</p>
+            <h2 class="stat-number">Jatim</h2>
+            <p class="stat-label">Cakupan Logistik</p>
           </div>
         </div>
       </div>
@@ -180,11 +152,8 @@
     <section class="about-section" id="tentang">
       <div class="container">
         <div class="about-grid">
-          <div class="about-images">
-            <div class="about-image-frame frame-main">
-              <img src="assets/about_fresh_baking.webp" alt="Baker Menarik Roti Segar dari Oven" loading="lazy" width="450" height="350">
-              <span class="image-caption">Fasilitas Produksi Bayu Bagus</span>
-            </div>
+          <div class="about-image-frame">
+            <img src="assets/about_fresh_baking.webp" alt="Fasilitas Produksi Bayu Bagus" width="450" height="350" loading="lazy">
           </div>
           <div class="about-text-content">
             <span class="section-eyebrow">Profil Perusahaan</span>
@@ -194,30 +163,30 @@
             <div class="about-features-list">
               <div class="feature-item">
                 <div class="feature-icon">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M6 18c-1.5 0-3-1-3-3 0-2.5 2.5-4 5.5-4a4 4 0 0 1 7-3 5.5 5.5 0 0 1 5.5 5.5c0 2-1.5 4.5-3 4.5"></path>
                     <path d="M6 18h12v3H6z"></path>
                   </svg>
                 </div>
                 <div class="feature-text">
                   <h3>Fresh Every Day</h3>
-                  <p>Seluruh produk kami dipanggang segar setiap pagi menggunakan bahan baku bersertifikat Halal.</p>
+                  <p>Seluruh produk dipanggang segar setiap pagi menggunakan bahan bersertifikat Halal.</p>
                 </div>
               </div>
               <div class="feature-item">
                 <div class="feature-icon">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                   </svg>
                 </div>
                 <div class="feature-text">
                   <h3>Keamanan Konsumen</h3>
-                  <p>Setiap varian roti terdaftar di BPOM RI dan dikemas secara rapat &amp; higienis.</p>
+                  <p>Terdaftar resmi BPOM RI dan dikemas higienis.</p>
                 </div>
               </div>
               <div class="feature-item">
                 <div class="feature-icon">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                     <circle cx="9" cy="7" r="4"></circle>
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -226,7 +195,7 @@
                 </div>
                 <div class="feature-text">
                   <h3>Harga Kompetitif</h3>
-                  <p>Penawaran khusus untuk mitra agen grosir, ritel, warung, katering sekolah, dan katering industri.</p>
+                  <p>Penawaran grosir khusus mitra agen, ritel, warung, dan katering.</p>
                 </div>
               </div>
             </div>
@@ -238,32 +207,28 @@
     <section class="catalog-section" id="katalog">
       <div class="container">
         <div class="catalog-header">
-          <div class="catalog-header-text">
+          <div>
             <span class="section-eyebrow">Katalog Roti &amp; Kue</span>
             <h2 class="section-title">Produk Unggulan Bayu Bagus</h2>
-            <p class="section-subtitle">Klik kartu produk untuk melihat rincian Informasi Gizi (Nutrition Facts) lengkap.</p>
+            <p class="section-subtitle">Klik "+ Kalkulator" untuk menambah item ke simulasi order atau "Nilai Gizi" untuk rincian BPOM.</p>
           </div>
-          <div class="catalog-search-wrapper">
-            <div class="search-input-box">
-              <span class="search-icon">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-              </span>
-              <input type="text" id="catalog-search" placeholder="Cari roti favorit Anda..." aria-label="Cari Produk">
-            </div>
+          <div class="search-input-box">
+            <span class="search-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" id="catalog-search" placeholder="Cari roti favorit..." aria-label="Cari Produk">
           </div>
         </div>
 
-        <div class="filter-tabs-wrapper">
-          <div class="filter-tabs" id="catalog-filters" role="tablist" aria-label="Kategori Produk">
-            <button class="filter-tab active" role="tab" aria-selected="true" data-category="all">Semua Roti</button>
-            <button class="filter-tab" role="tab" aria-selected="false" data-category="manis-pia">Roti Manis &amp; Pia</button>
-            <button class="filter-tab" role="tab" aria-selected="false" data-category="mooncake">Mooncake</button>
-            <button class="filter-tab" role="tab" aria-selected="false" data-category="sisir-sandwich">Roti Sisir &amp; Sandwich</button>
-            <button class="filter-tab" role="tab" aria-selected="false" data-category="tawar-polos">Tawar, Polos &amp; Burger</button>
-          </div>
+        <div class="filter-tabs" id="catalog-filters">
+          <button class="filter-tab active" data-category="all">Semua Roti</button>
+          <button class="filter-tab" data-category="manis-pia">Roti Manis &amp; Pia</button>
+          <button class="filter-tab" data-category="mooncake">Mooncake</button>
+          <button class="filter-tab" data-category="sisir-sandwich">Roti Sisir &amp; Sandwich</button>
+          <button class="filter-tab" data-category="tawar-polos">Tawar &amp; Burger</button>
         </div>
 
         <div class="catalog-grid" id="catalog-grid"></div>
@@ -274,18 +239,17 @@
       <div class="container">
         <div class="calculator-card">
           <div class="calculator-grid">
-            
             <div class="calculator-builder">
-              <span class="section-eyebrow">Estimator Harga &amp; Penawaran B2B</span>
-              <h2 class="calculator-title">Simulasi Kebutuhan Pasokan</h2>
-              <p class="calculator-desc">Pilih produk dan tentukan volume yang Anda butuhkan untuk melihat estimasi total berat logistik dan nilai transaksi grosir.</p>
-              
+              <span class="section-eyebrow">Estimator Harga B2B</span>
+              <h2 class="section-title">Simulasi Kebutuhan Pasokan</h2>
+              <p class="section-subtitle">Pilih varian dan jumlah untuk menghitung total berat logistik dan estimasi nilai transaksi grosir.</p>
+
               <div class="product-selector-row">
                 <div class="input-group">
                   <label for="calc-product-select">Pilih Varian Roti</label>
                   <select id="calc-product-select"></select>
                 </div>
-                <div class="input-group quantity-input-group">
+                <div class="input-group">
                   <label for="calc-qty-input">Jumlah (Pcs)</label>
                   <div class="qty-control">
                     <button type="button" class="qty-btn" id="calc-qty-minus">-</button>
@@ -297,11 +261,11 @@
               </div>
 
               <div class="cart-table-wrapper">
-                <table class="cart-table" id="cart-table">
+                <table class="cart-table">
                   <thead>
                     <tr>
                       <th>Nama Produk</th>
-                      <th class="text-right">Harga Satuan</th>
+                      <th class="text-right">Harga</th>
                       <th class="text-center">Jumlah</th>
                       <th class="text-right">Subtotal</th>
                       <th></th>
@@ -309,7 +273,7 @@
                   </thead>
                   <tbody id="cart-body">
                     <tr class="empty-cart-row">
-                      <td colspan="5" class="text-center text-muted">Belum ada produk yang ditambahkan. Silakan pilih di atas.</td>
+                      <td colspan="5" class="text-center text-muted">Belum ada produk yang ditambahkan.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -317,60 +281,48 @@
 
               <div class="calc-summary-panel">
                 <div class="summary-stat">
-                  <span class="label">Total Item</span>
-                  <span class="value" id="calc-total-items">0 pcs</span>
+                  <span>Total Item:</span>
+                  <strong id="calc-total-items">0 pcs</strong>
                 </div>
                 <div class="summary-stat">
-                  <span class="label">Estimasi Berat Bersih</span>
-                  <span class="value" id="calc-total-weight">0.00 kg</span>
+                  <span>Estimasi Berat:</span>
+                  <strong id="calc-total-weight">0.00 kg</strong>
                 </div>
                 <div class="summary-stat total-price-stat">
-                  <span class="label">Total Estimasi Harga</span>
-                  <span class="value" id="calc-total-price">Rp 0</span>
+                  <span>Total Estimasi Harga:</span>
+                  <strong id="calc-total-price">Rp 0</strong>
                 </div>
               </div>
             </div>
 
             <div class="calculator-form-panel">
-              <h3>Kirim Permintaan Penawaran / Sampel</h3>
-              <p>Isi formulir berikut untuk mengirimkan rincian simulasi order Anda langsung ke WhatsApp marketing kami.</p>
-              
+              <h3 class="form-title">Kirim Permintaan Penawaran</h3>
               <form id="b2b-form">
-                <div class="form-group">
-                  <label for="form-name">Nama Lengkap Anda *</label>
-                  <input type="text" id="form-name" required placeholder="Contoh: Budi Susanto">
+                <div class="input-group mb-12">
+                  <label for="form-name">Nama Lengkap *</label>
+                  <input type="text" id="form-name" required placeholder="Budi Susanto">
                 </div>
-                
-                <div class="form-group">
+                <div class="input-group mb-12">
                   <label for="form-business">Nama Usaha / Toko / Katering *</label>
-                  <input type="text" id="form-business" required placeholder="Contoh: Katering Berkah Nganjuk">
+                  <input type="text" id="form-business" required placeholder="Katering Berkah Nganjuk">
                 </div>
-
-                <div class="form-group">
+                <div class="input-group mb-12">
                   <label for="form-region">Kota / Kecamatan Pengiriman *</label>
-                  <input type="text" id="form-region" required placeholder="Contoh: Baron, Nganjuk">
+                  <input type="text" id="form-region" required placeholder="Baron, Nganjuk">
                 </div>
-
-                <div class="form-group">
-                  <label for="form-request-sample" class="checkbox-label">
+                <div class="input-group mb-12">
+                  <label class="checkbox-label">
                     <input type="checkbox" id="form-request-sample">
-                    <span>Minta Sampel Produk Gratis (Untuk evaluasi mitra)</span>
+                    <span>Minta Sampel Produk Gratis</span>
                   </label>
                 </div>
-
-                <div class="form-group">
-                  <label for="form-notes">Catatan Kustomisasi / Pertanyaan Tambahan</label>
-                  <textarea id="form-notes" placeholder="Contoh: Jadwal pengiriman setiap subuh pukul 05:00 WIB..."></textarea>
+                <div class="input-group mb-16">
+                  <label for="form-notes">Catatan Tambahan</label>
+                  <textarea id="form-notes" placeholder="Catatan khusus jadwal pengiriman..."></textarea>
                 </div>
-
-                <button type="submit" class="btn-primary btn-submit-order" id="btn-submit-order">
-                  <svg class="icon-inline" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-right: 8px;">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                  </svg>Hubungi Marketing &amp; Kirim via WhatsApp
-                </button>
+                <button type="submit" class="btn-primary btn-submit-full">Kirim via WhatsApp</button>
               </form>
             </div>
-
           </div>
         </div>
       </div>
@@ -383,39 +335,41 @@
           <div class="contact-info-panel">
             <span class="section-eyebrow">Hubungi Pemasaran</span>
             <h2 class="section-title">Mari Bermitra Bersama Bayu Bagus</h2>
-            <p class="contact-desc">Tim logistik dan marketing kami siap berdiskusi mengenai kontrak pasokan jangka panjang, negosiasi harga di atas volume tertentu, and rute pengiriman harian armada kami.</p>
+            <p class="contact-desc">Tim logistik dan marketing kami siap berdiskusi mengenai kontrak pasokan jangka panjang, penawaran grosir volume besar, dan rute armada pengiriman harian.</p>
             
             <div class="contact-details-list">
               <div class="contact-item">
-                <span class="contact-icon-sphere">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="contact-icon-sphere">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                </span>
+                </div>
                 <div class="contact-text">
                   <h4>Alamat Fasilitas Produksi</h4>
                   <p>RT.02/RW.02, Garu, Kec. Baron, Kabupaten Nganjuk, Jawa Timur 64394</p>
                 </div>
               </div>
+
               <div class="contact-item">
-                <span class="contact-icon-sphere">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="contact-icon-sphere">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                   </svg>
-                </span>
+                </div>
                 <div class="contact-text">
                   <h4>Telepon Pemasaran</h4>
-                  <p><a href="tel:081234714911">0812-3471-4911</a></p>
+                  <p><a href="tel:081234714911" class="contact-tel-link">0812-3471-4911</a></p>
                 </div>
               </div>
+
               <div class="contact-item">
-                <span class="contact-icon-sphere">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <div class="contact-icon-sphere">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <circle cx="12" cy="12" r="10"></circle>
                     <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
-                </span>
+                </div>
                 <div class="contact-text">
                   <h4>Jam Kerja Operasional</h4>
                   <table class="schedule-table">
@@ -429,28 +383,21 @@
           </div>
 
           <div class="contact-map-panel">
-            <div class="map-container-wrapper">
-              <iframe
-                title="Peta Lokasi PT Bayu Bagus Bakery"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.4!2d112.0735154!3d-7.5669809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e784722817720c9%3A0x3e38723c61e85a20!2sPT%20Bayu%20Bagus%20Bakery!5e0!3m2!1sid!2sid!4v1"
-                width="100%"
-                height="320"
-                style="border:0; border-radius: 12px; display:block;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
+            <div class="map-container-wrapper" id="map-container">
+              <div class="map-placeholder" id="map-placeholder">
+                <span class="map-placeholder-badge">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  Hover / Sentuh untuk Peta Interaktif
+                </span>
+                <p class="map-placeholder-sub">Pabrik PT Bayu Bagus Bakery - Baron, Nganjuk</p>
+              </div>
             </div>
             
             <div class="map-guide-card">
-              <span class="guide-icon">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A7 7 0 0 0 5 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"></path>
-                  <line x1="9" y1="18" x2="15" y2="18"></line>
-                  <line x1="10" y1="22" x2="14" y2="22"></line>
-                </svg>
-              </span>
-              <p class="guide-text">Untuk kunjungan survei pabrik atau penjemputan order mandiri (grosir lokal), harap konfirmasi janji temu dengan tim pemasaran kami minimal 1 hari sebelumnya via WhatsApp.</p>
+              <p>Untuk kunjungan survei pabrik atau penjemputan order mandiri (grosir lokal), harap konfirmasi janji temu dengan tim pemasaran kami minimal 1 hari sebelumnya via WhatsApp.</p>
             </div>
           </div>
 
@@ -460,147 +407,46 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-container">
-      <div class="footer-left">
-        <a href="#" class="footer-logo">
-          <div class="footer-logo-badge">
-            <img src="assets/logo.webp" alt="Logo PT Bayu Bagus Bakery" width="40" height="30">
-          </div>
-          <span>Bayu Bagus Bakery</span>
-        </a>
-        <p class="footer-tagline">Menyediakan roti lezat, berkualitas tinggi, serta bersertifikasi Halal &amp; BPOM RI untuk pasar grosir Jawa Timur.</p>
-      </div>
-      <div class="footer-right">
-        <div class="footer-links-col">
-          <h4>Navigasi</h4>
-          <a href="#tentang">Tentang</a>
-          <a href="#katalog">Katalog Roti</a>
-          <a href="#kalkulator">Kalkulator B2B</a>
-          <a href="#kontak">Kontak</a>
-        </div>
-        <div class="footer-links-col">
-          <h4>Varian Utama</h4>
-          <a href="#katalog">Roti Pia Basah</a>
-          <a href="#katalog">Kue Mooncake</a>
-          <a href="#katalog">Roti Sisir</a>
-          <a href="#katalog">Roti Tawar Pack</a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-container">
-        <p class="copyright-text">&copy; 2026 PT Bayu Bagus Bakery. Hak Cipta Dilindungi Undang-Undang.</p>
-        <p class="developer-tag">Designed with Passion in Nganjuk, Jatim.</p>
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 PT Bayu Bagus Bakery. Hak Cipta Dilindungi.</p>
+        <p>Designed with Passion in Nganjuk, Jatim.</p>
       </div>
     </div>
   </footer>
 
-  <div class="modal-overlay" id="nutrition-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
-    <div class="modal-card">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup Detail Gizi">&times;</button>
-      
-      <div class="modal-grid">
-        <div class="modal-product-visual">
-          <img id="modal-product-img" src="assets/mooncake-cokelat.webp" alt="Foto Produk" class="modal-img">
-          <h3 id="modal-product-name" class="modal-pname">Nama Roti</h3>
-          <p id="modal-product-desc" class="modal-pdesc">Keterangan produk</p>
-          <div class="modal-price-badge" id="modal-product-price">Rp 1.900</div>
-        </div>
-        
-        <div class="nutrition-label-container">
-          <div class="nutrition-label">
-            <h2 class="label-heading">INFORMASI NILAI GIZI</h2>
-            <div class="label-subheading" id="lbl-takaran-saji">Takaran Saji: 50 g</div>
-            <div class="label-subheading" id="lbl-sajian-per-kemasan">Sajian per Kemasan: 1</div>
-            
-            <div class="divider-thick"></div>
-            
-            <div class="label-row-double">
-              <span class="label-bold">JUMLAH PER SAJIAN</span>
-            </div>
-            <div class="label-row-double text-large">
-              <span class="label-bold">Energi Total</span>
-              <span class="label-bold" id="lbl-energi-total">130 kkal</span>
-            </div>
-            <div class="label-row-indent">
-              <span>Energi dari Lemak</span>
-              <span id="lbl-energi-dari-lemak">20 kkal</span>
-            </div>
-            
-            <div class="divider-medium"></div>
-            
-            <div class="label-row-header">
-              <span></span>
-              <span class="label-bold">% AKG*</span>
-            </div>
-            
-            <div class="label-row-double">
-              <div>
-                <span class="label-bold">Lemak Total</span>
-                <span id="lbl-lemak-total">2.5 g</span>
-              </div>
-              <span class="label-bold" id="lbl-lemak-total-akg">4%</span>
-            </div>
-            <div class="label-row-indent">
-              <div>
-                <span>Lemak Jenuh</span>
-                <span id="lbl-lemak-jenuh">1.5 g</span>
-              </div>
-              <span class="label-bold" id="lbl-lemak-jenuh-akg">9%</span>
-            </div>
-
-            <div class="label-row-double">
-              <div>
-                <span class="label-bold">Protein</span>
-                <span id="lbl-protein">3 g</span>
-              </div>
-              <span class="label-bold" id="lbl-protein-akg">5%</span>
-            </div>
-
-            <div class="label-row-double">
-              <div>
-                <span class="label-bold">Karbohidrat Total</span>
-                <span id="lbl-karbohidrat">24 g</span>
-              </div>
-              <span class="label-bold" id="lbl-karbohidrat-akg">7%</span>
-            </div>
-            <div class="label-row-indent" id="row-serat-pangan" style="display: none;">
-              <div>
-                <span>Serat Pangan</span>
-                <span id="lbl-serat-pangan">1 g</span>
-              </div>
-              <span class="label-bold" id="lbl-serat-pangan-akg">3%</span>
-            </div>
-            <div class="label-row-indent">
-              <div>
-                <span>Gula</span>
-                <span id="lbl-gula">9 g</span>
-              </div>
-              <span></span>
-            </div>
-
-            <div class="label-row-double">
-              <div>
-                <span class="label-bold">Garam (Natrium)</span>
-                <span id="lbl-garam">100 mg</span>
-              </div>
-              <span class="label-bold" id="lbl-garam-akg">7%</span>
-            </div>
-
-            <div class="divider-thick"></div>
-            
-            <div class="label-footnote">
-              * Persen AKG berdasarkan kebutuhan energi 2150 kkal. Kebutuhan energi Anda mungkin lebih tinggi atau lebih rendah.
-            </div>
-          </div>
+  <dialog id="nutrition-dialog">
+    <div class="dialog-body">
+      <button class="dialog-close-btn" id="dialog-close-btn" aria-label="Tutup Modal">&times;</button>
+      <div class="modal-header-row">
+        <img id="modal-img" src="" alt="Foto Produk" class="modal-thumb">
+        <div>
+          <h3 id="modal-title" class="modal-title"></h3>
+          <span id="modal-price" class="modal-price"></span>
         </div>
       </div>
-      
+      <p id="modal-desc" class="modal-desc"></p>
+
+      <div class="nutrition-box">
+        <h4 class="nutrition-box-title">INFORMASI NILAI GIZI</h4>
+        <p id="lbl-saji" class="nutrition-box-saji"></p>
+        <div class="nutrition-box-list">
+          <div class="nutrition-row"><span>Energi Total:</span><strong id="lbl-energi"></strong></div>
+          <div class="nutrition-row"><span>Lemak Total:</span><span id="lbl-lemak"></span></div>
+          <div class="nutrition-row"><span>Protein:</span><span id="lbl-protein"></span></div>
+          <div class="nutrition-row"><span>Karbohidrat Total:</span><span id="lbl-karbo"></span></div>
+        </div>
+      </div>
     </div>
-  </div>
+  </dialog>
 
-  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+  <a href="https://wa.me/6281234714911" target="_blank" rel="noopener noreferrer" class="floating-mobile-wa">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+    <span>Tanya Sales WA</span>
+  </a>
 
-  <script src="scripts/main.js" type="module"></script>
+  <script type="module" src="/src/scripts/app.js"></script>
 </body>
 </html>

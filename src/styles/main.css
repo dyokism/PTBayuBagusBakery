@@ -1,0 +1,199 @@
+:root {
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Warm Artisanal Palette (Cream, Cocoa, Terracotta, Sage) */
+  --color-bg: #FDFBF7;
+  --color-bg-secondary: #F5EFEB;
+  --color-text: #2F1F17;
+  --color-text-muted: #634E43;
+  --color-primary: #B54C30;
+  --color-primary-hover: #9E3E25;
+  --color-accent: #3E5C41;
+  --color-border: #EAE0D5;
+  --color-white: #FFFFFF;
+  --header-height: 72px;
+  
+  /* Trust Strip Color Badges */
+  --color-badge-halal: #2E7D32;
+  --color-badge-bpom: #1565C0;
+  --color-badge-fresh: #D84315;
+
+  --color-shadow: rgba(47, 31, 23, 0.06);
+  --color-shadow-hover: rgba(47, 31, 23, 0.14);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 9999px;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-size-body: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  --font-size-h1: clamp(2.2rem, 1.8rem + 2.2vw, 3.6rem);
+  --font-size-h2: clamp(1.6rem, 1.4rem + 1.2vw, 2.4rem);
+  --font-size-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.5rem);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  z-index: 10000;
+  transition: top 0.2s ease-in-out;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.skip-link:focus-visible {
+  top: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+html.mobile-menu-open,
+html.mobile-menu-open body {
+  overflow: hidden !important;
+  height: 100dvh !important;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: var(--font-size-body);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn-primary, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 6px 20px -6px rgba(181, 76, 48, 0.4);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(181, 76, 48, 0.6);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+  background-color: #EFE4DC;
+  transform: translateY(-2px);
+  border-color: var(--color-text-muted);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1.05rem;
+}
+
+.section-eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--font-size-h2);
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.section-subtitle {
+  max-width: 600px;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+}
+
+/* Hardware acceleration utilities */
+.gpu-layer {
+  will-change: transform, opacity;
+}
