@@ -54,7 +54,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap">
+  </noscript>
   
   <link rel="stylesheet" href="/src/styles/main.css">
   <link rel="stylesheet" href="/src/styles/header.css">
@@ -346,7 +350,7 @@
                   </svg>
                 </div>
                 <div class="contact-text">
-                  <h4>Alamat Fasilitas Produksi</h4>
+                  <h3>Alamat Fasilitas Produksi</h3>
                   <p>RT.02/RW.02, Garu, Kec. Baron, Kabupaten Nganjuk, Jawa Timur 64394</p>
                 </div>
               </div>
@@ -358,7 +362,7 @@
                   </svg>
                 </div>
                 <div class="contact-text">
-                  <h4>Telepon Pemasaran</h4>
+                  <h3>Telepon Pemasaran</h3>
                   <p><a href="tel:081234714911" class="contact-tel-link">0812-3471-4911</a></p>
                 </div>
               </div>
@@ -371,7 +375,7 @@
                   </svg>
                 </div>
                 <div class="contact-text">
-                  <h4>Jam Kerja Operasional</h4>
+                  <h3>Jam Kerja Operasional</h3>
                   <table class="schedule-table">
                     <tr><td>Senin-Jumat</td><td>08:00-15:00 WIB</td></tr>
                     <tr><td>Minggu</td><td>08:00-15:00 WIB</td></tr>

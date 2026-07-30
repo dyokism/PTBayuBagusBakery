@@ -1,12 +1,20 @@
 # PT Bayu Bagus Bakery
 
-Sistem estimasi pasokan & web B2B PT Bayu Bagus Bakery. Dibuat dengan stack Vanilla JS + Vite tanpa framework untuk kecepatan maksimal.
+Sistem estimasi pasokan & web B2B PT Bayu Bagus Bakery. Dibuat dengan stack Vanilla JS + Vite.
 
 ## Tech Stack
 - **Core**: HTML5, Vanilla JS (ES Modules), CSS3
 - **Build**: Vite v5.4.21
 - **UI & Font**: Google Fonts (Outfit & Sora), Native HTML5 `<dialog>`
-- **Lighthouse**: Performance 93+ (Mobile) / 98+ (Desktop), Accessibility 98+, Best Practices 100, SEO 92+
+
+## Audit Lighthouse
+
+| Kategori | Mobile | Desktop |
+|---|---|---|
+| **Performance** | **100** | **100** |
+| **Accessibility** | **100** | **100** |
+| **Best Practices** | **100** | **100** |
+| **SEO** | **100** | **100** |
 
 ## Struktur Direktori
 
@@ -14,7 +22,11 @@ Sistem estimasi pasokan & web B2B PT Bayu Bagus Bakery. Dibuat dengan stack Vani
 BayuBagusBakery/
 ├── index.html               # Halaman utama, meta SEO, & skema JSON-LD Bakery
 ├── package.json             # Konfigurasi dependensi & skrip Vite
-├── public/assets/           # Gambar WebP produk, hero, & logo
+├── LICENSE                  # Lisensi MIT
+├── public/
+│   ├── robots.txt           # File instruksi crawler mesin pencari
+│   ├── sitemap.xml          # XML Sitemap index
+│   └── assets/              # Gambar WebP produk, hero, & logo
 └── src/
     ├── scripts/
     │   ├── app.js           # Entry point & inisialisasi lazy map
@@ -32,3 +44,7 @@ npm run dev      # Dev server (http://localhost:5173/)
 npm run build    # Output ke dist/
 npm run preview  # Production preview & audit Lighthouse (http://localhost:4173/)
 ```
+
+## License
+
+[MIT License](LICENSE)
