@@ -75,9 +75,7 @@
   width: 100%;
   height: auto;
   aspect-ratio: 12 / 13;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 16px 40px -10px var(--color-shadow-hover);
+  mix-blend-mode: multiply;
   object-fit: cover;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;

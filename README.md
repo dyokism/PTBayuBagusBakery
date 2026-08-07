@@ -11,10 +11,10 @@ Sistem estimasi pasokan & web B2B PT Bayu Bagus Bakery. Dibuat dengan stack Vani
 
 | Kategori | Mobile | Desktop |
 |---|---|---|
-| **Performance** | **100** | **100** |
-| **Accessibility** | **100** | **100** |
-| **Best Practices** | **100** | **100** |
-| **SEO** | **100** | **100** |
+| Performance | 99 | 100 |
+| Accessibility | 100 | 100 |
+| Best Practices | 100 | 100 |
+| SEO | 100 | 100 |
 
 ## Struktur Direktori
 
