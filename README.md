@@ -1,50 +1,39 @@
-# PT Bayu Bagus Bakery
+<div align="center">
+  <img src="public/assets/logo-utama.webp" width="96" alt="Logo PT Bayu Bagus Bakery">
 
-Sistem estimasi pasokan & web B2B PT Bayu Bagus Bakery. Dibuat dengan stack Vanilla JS + Vite.
+  # Bayu Bagus Bakery
+  *Profil pabrik roti dan pusat kontak grosir resmi sejak 1995.*
 
-## Tech Stack
-- **Core**: HTML5, Vanilla JS (ES Modules), CSS3
-- **Build**: Vite v5.4.21
-- **UI & Font**: Google Fonts (Outfit & Sora), Native HTML5 `<dialog>`
+  [Fitur](#fitur) • [Pemasangan](#pemasangan) • [Penggunaan](#penggunaan)
+</div>
 
-## Audit Lighthouse
+Situs profil resmi dan pusat pemesanan grosir PT Bayu Bagus Bakery, pabrik roti yang beroperasi di Desa Garu, Baron, Nganjuk sejak 1995. Dibangun memakai Vanilla JavaScript dan Vite dengan gaya buku besar klasik tanpa kartu SaaS, dilengkapi video fasilitas produksi, izin edar BPOM serta Halal resmi, dan jalur komunikasi WhatsApp langsung.
 
-| Kategori | Mobile | Desktop |
-|---|---|---|
-| Performance | 99 | 100 |
-| Accessibility | 100 | 100 |
-| Best Practices | 100 | 100 |
-| SEO | 100 | 100 |
+## Fitur
+- **Tampilan Buku Besar Klasik** - Tata letak cetak bersih dengan garis pembatas ganda tanpa kartu bertumpuk atau bayangan tebal.
+- **Pemutar Video Fasilitas** - Video tur pabrik dengan pemuatan tunda agar halaman tetap ringan dibuka.
+- **Katalog Grosir Terbuka** - Daftar produk unggulan mencakup Roti Sisir, Universal Mooncake, Pia Tradisional, serta tabel spesifikasi lengkap.
+- **Keterbukaan Legalitas** - Izin edar resmi BPOM RI MD 236013017961, sertifikasi Halal BPJPH, dan standar sanitasi CPPOB.
+- **Pemesanan WhatsApp Langsung** - Format pesan otomatis untuk pedagang, toko kelontong, dan pengelola acara.
 
-## Struktur Direktori
-
-```text
-BayuBagusBakery/
-├── index.html               # Halaman utama, meta SEO, & skema JSON-LD Bakery
-├── package.json             # Konfigurasi dependensi & skrip Vite
-├── LICENSE                  # Lisensi MIT
-├── public/
-│   ├── robots.txt           # File instruksi crawler mesin pencari
-│   ├── sitemap.xml          # XML Sitemap index
-│   └── assets/              # Gambar WebP produk, hero, & logo
-└── src/
-    ├── scripts/
-    │   ├── app.js           # Entry point & inisialisasi lazy map
-    │   ├── data/
-    │   │   └── products.js  # Data utama 14 produk & informasi BPOM
-    │   └── components/      # Modul UI (katalog, kalkulator B2B, modal, header, toast)
-    └── styles/              # Modul CSS (token warna, reset, hero, komponen)
-```
-
-## Command Line
-
+## Pemasangan
 ```bash
-npm install      # Install dependensi
-npm run dev      # Dev server (http://localhost:5173/)
-npm run build    # Output ke dist/
-npm run preview  # Production preview & audit Lighthouse (http://localhost:4173/)
+# Gandakan repositori
+git clone https://github.com/your-username/BayuBagusBakery.git
+cd BayuBagusBakery
+
+# Pasang dependensi lewat Bun
+bun install
 ```
 
-## License
+## Penggunaan
+```bash
+# Jalankan server pengembangan lokal (http://localhost:5173/)
+bun run dev
 
-[MIT License](LICENSE)
+# Kompilasi berkas produksi ke dist/
+bun run build
+
+# Pratinjau hasil kompilasi lokal
+bun run preview
+```

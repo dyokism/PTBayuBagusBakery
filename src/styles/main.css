@@ -1,39 +1,51 @@
 :root {
-  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-  /* Warm Artisanal Palette (Cream, Cocoa, Terracotta, Sage) */
-  --color-bg: #FDFBF7;
-  --color-bg-secondary: #F5EFEB;
-  --color-text: #2F1F17;
-  --color-text-muted: #634E43;
-  --color-primary: #B54C30;
-  --color-primary-hover: #9E3E25;
-  --color-accent: #3E5C41;
-  --color-border: #EAE0D5;
-  --color-white: #FFFFFF;
-  --header-height: 72px;
-  
-  /* Trust Strip Color Badges */
-  --color-badge-halal: #2E7D32;
-  --color-badge-bpom: #1565C0;
-  --color-badge-fresh: #D84315;
+  /* Classic Heritage Industrial Palette ("Old but Gold" Ledger) */
+  --color-navy: #141E28;
+  --color-navy-dark: #0D141C;
+  --color-navy-light: #202D3B;
 
-  --color-shadow: rgba(47, 31, 23, 0.06);
-  --color-shadow-hover: rgba(47, 31, 23, 0.14);
-  
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --color-red: #8E2424;
+  --color-red-hover: #731B1B;
+  --color-red-subtle: #F7EAEA;
+  --color-red-border: #D9A8A8;
+
+  --color-bg: #FAF7F2;
+  --color-bg-alt: #F3ECE2;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F6F1E9;
+
+  --color-border: #D8D0C5;
+  --color-border-subtle: #E8E2D8;
+  --color-border-dark: #A89F93;
+  --color-rule-double: #C5BCAD;
+
+  --color-text: #1C242E;
+  --color-text-muted: #556270;
+  --color-text-light: #7E8C9B;
+  --color-text-inverse: #FFFFFF;
+
+  --color-whatsapp: #1E7E34;
+  --color-whatsapp-hover: #155D27;
+
+  --header-height: 74px;
+
+  /* Architectural Sharp Radii (Anti-SaaS) */
+  --radius-xs: 2px;
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
   --radius-pill: 9999px;
-  
-  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-fast: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 
-  --font-size-body: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
-  --font-size-h1: clamp(2.2rem, 1.8rem + 2.2vw, 3.6rem);
-  --font-size-h2: clamp(1.6rem, 1.4rem + 1.2vw, 2.4rem);
-  --font-size-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.5rem);
+  --transition-fast: all 0.16s ease-in-out;
+  --transition-smooth: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-size-body: clamp(0.95rem, 0.92rem + 0.18vw, 1.05rem);
+  --font-size-h1: clamp(2.3rem, 1.9rem + 2vw, 3.5rem);
+  --font-size-h2: clamp(1.7rem, 1.5rem + 1vw, 2.35rem);
+  --font-size-h3: clamp(1.2rem, 1.1rem + 0.4vw, 1.5rem);
 }
 
 *, *::before, *::after {
@@ -46,15 +58,14 @@
   position: absolute;
   top: -100px;
   left: 16px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  padding: 12px 20px;
-  border-radius: var(--radius-sm);
+  background: var(--color-navy);
+  color: var(--color-text-inverse);
+  padding: 10px 18px;
+  border-radius: var(--radius-xs);
   font-weight: 700;
   z-index: 10000;
   transition: top 0.2s ease-in-out;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .skip-link:focus-visible {
@@ -63,7 +74,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: 86px;
   overflow-y: auto;
   scrollbar-gutter: stable;
 }
@@ -80,16 +91,17 @@ body {
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  line-height: 1.68;
   font-size: var(--font-size-body);
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4 {
   font-family: var(--font-display);
+  color: var(--color-navy);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
   font-weight: 700;
-  color: var(--color-text);
-  line-height: 1.2;
 }
 
 a {
@@ -104,96 +116,231 @@ img {
   display: block;
 }
 
-:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
+/* Container */
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1180px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-.btn-primary, .btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  font-weight: 600;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
-  border: none;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  transition: var(--transition-smooth);
+@media (min-width: 768px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  box-shadow: 0 6px 20px -6px rgba(181, 76, 48, 0.4);
+/* Traditional Double Rule Dividers */
+.double-rule-top {
+  border-top: 3px double var(--color-rule-double);
+  padding-top: 24px;
 }
 
-.btn-primary:hover {
-  background-color: var(--color-primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px -4px rgba(181, 76, 48, 0.6);
+.double-rule-bottom {
+  border-bottom: 3px double var(--color-rule-double);
+  padding-bottom: 24px;
 }
 
-.btn-primary:active {
-  transform: translateY(0);
+.hairline-top {
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
 }
 
-.btn-secondary {
-  background-color: var(--color-bg-secondary);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
+/* Classic Editorial Section Headers */
+.section-header {
+  margin-bottom: 40px;
 }
 
-.btn-secondary:hover {
-  background-color: #EFE4DC;
-  transform: translateY(-2px);
-  border-color: var(--color-text-muted);
-}
-
-.btn-secondary:active {
-  transform: translateY(0);
-}
-
-.btn-lg {
-  padding: 16px 32px;
-  font-size: 1.05rem;
+.section-header.text-center {
+  text-align: center;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-eyebrow {
   display: block;
-  font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.76rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--color-primary);
-  margin-bottom: 12px;
+  letter-spacing: 0.14em;
+  color: var(--color-red);
+  margin-bottom: 10px;
 }
 
 .section-title {
-  font-family: var(--font-display);
   font-size: var(--font-size-h2);
-  font-weight: 800;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+  color: var(--color-navy);
+  font-weight: 700;
 }
 
-.section-subtitle {
-  max-width: 600px;
+.section-lead {
+  font-size: 1.02rem;
   color: var(--color-text-muted);
-  margin-bottom: 40px;
+  max-width: 700px;
+  line-height: 1.7;
 }
 
-/* Hardware acceleration utilities */
-.gpu-layer {
-  will-change: transform, opacity;
+.section-header.text-center .section-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Common Section Spacing */
+section {
+  padding-top: 64px;
+  padding-bottom: 64px;
+  position: relative;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+@media (min-width: 992px) {
+  section {
+    padding-top: 84px;
+    padding-bottom: 84px;
+  }
+}
+
+/* Classic Architectural Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: var(--color-red);
+  color: var(--color-text-inverse);
+  padding: 12px 24px;
+  border-radius: var(--radius-xs);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border: 1px solid var(--color-red-hover);
+  transition: var(--transition-fast);
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-red-hover);
+  color: var(--color-text-inverse);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--color-navy);
+  border: 1px solid var(--color-navy);
+  padding: 12px 22px;
+  border-radius: var(--radius-xs);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-navy);
+  color: var(--color-text-inverse);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-whatsapp);
+  color: #FFFFFF;
+  padding: 11px 20px;
+  border-radius: var(--radius-xs);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: var(--transition-fast);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-hover);
+  color: #FFFFFF;
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+/* Quiet Typographic Inline Seals */
+.inline-seal {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.inline-seal::before {
+  content: "·";
+  margin: 0 6px;
+  color: var(--color-border-dark);
+}
+
+.inline-seal:first-child::before {
+  display: none;
+}
+
+/* Floating WhatsApp (Single Communication Anchor) */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-navy);
+  color: #FFFFFF;
+  border: 1px solid var(--color-border-dark);
+  padding: 10px 18px;
+  border-radius: var(--radius-xs);
+  font-weight: 600;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 16px rgba(20, 30, 40, 0.18);
+  transition: var(--transition-fast);
+}
+
+.floating-whatsapp:hover {
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+  color: #FFFFFF;
+}
+
+.floating-whatsapp-icon {
+  width: 18px;
+  height: 18px;
+  fill: #25D366;
+}
+
+@media (max-width: 576px) {
+  .floating-whatsapp span {
+    display: none;
+  }
+  .floating-whatsapp {
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    justify-content: center;
+    bottom: 20px;
+    right: 20px;
+  }
 }
