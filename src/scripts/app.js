@@ -1,5 +1,6 @@
 import { initHeader } from './components/header.js';
 import { initVideoPlayer } from './components/video-player.js';
+import { initProductCatalog } from './components/product-catalog.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Header (Scroll handling & mobile drawer)
@@ -7,6 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Factory Video Player
   initVideoPlayer();
+
+  // Initialize Product Catalog Filter Tabs
+  initProductCatalog();
 
   // Lightweight Interactive Google Maps Loader
   const mapContainer = document.getElementById('map-container');

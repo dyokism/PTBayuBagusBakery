@@ -12,16 +12,17 @@ export const initVideoPlayer = () => {
     // Ruang Tamu Creative - Company Profile PT. Bayu Bagus Bakery 2022
     const videoId = '2bEgLboJyPY';
     const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1`;
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0&modestbranding=1`;
     iframe.title = 'Company Profile PT. Bayu Bagus Bakery - Pabrik Roti Nganjuk';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
     iframe.allowFullscreen = true;
+    iframe.setAttribute('playsinline', '1');
     iframe.loading = 'eager';
 
+    container.appendChild(iframe);
     poster.style.opacity = '0';
     setTimeout(() => {
       poster.remove();
-      container.appendChild(iframe);
     }, 200);
   };
 

@@ -216,3 +216,41 @@
   padding: 13px;
   font-size: 1rem;
 }
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 56px;
+  }
+
+  .logo-img {
+    height: 34px;
+  }
+
+  .logo-title {
+    font-size: 1.05rem;
+  }
+
+  .logo-sub {
+    font-size: 0.60rem;
+    letter-spacing: 0.08em;
+  }
+
+  .mobile-nav-drawer {
+    padding: 20px 20px;
+  }
+
+  .mobile-nav-links {
+    gap: 12px;
+  }
+
+  .mobile-nav-item {
+    font-size: 1.05rem;
+    padding-bottom: 8px;
+  }
+
+  .mobile-btn-cta {
+    margin-top: 16px;
+    padding: 10px;
+    font-size: 0.90rem;
+  }
+}
